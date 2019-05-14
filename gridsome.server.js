@@ -7,23 +7,23 @@
 
 const axios = require('axios')
 
-module.exports = function (api) {
-  api.loadSource(async store => {
-    const { data } = await axios.get('https://api.example.com/posts')
+// module.exports = function (api) {
+//   api.loadSource(async store => {
+//     const { data } = await axios.get('https://api.example.com/posts')
 
-    const contentType = store.addContentType({
-      typeName: 'BlogPosts',
-      route: '/blog/:year/:slug'
-    })
+//     const contentType = store.addContentType({
+//       typeName: 'BlogPosts',
+//       route: '/blog/:year/:slug'
+//     })
 
-    for (const item of data) {
-      contentType.addNode({
-        id: item.id,
-        title: item.title,
-        slug: item.slug,
-        date: item.date,
-        content: item.content
-      })
-    }
-  })
-}
+//     for (const item of data) {
+//       contentType.addNode({
+//         id: item.id,
+//         title: item.title,
+//         slug: item.slug,
+//         date: item.date,
+//         content: item.content
+//       })
+//     }
+//   })
+// }
