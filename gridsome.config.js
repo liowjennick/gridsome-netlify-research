@@ -29,6 +29,18 @@ module.exports = {
           ]
         }
       }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'portfolio/**/*.md',
+        typeName: 'Portfolio',
+        remark: {
+          plugins: [
+            // ...local plugins
+          ]
+        }
+      }
     }
   ]
 }
